@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeweb Login</title>
+    <script src="js/tailwind.js"></script>
+</head>
+<body>
+   <div class="lg:flex lg:bg-white bg-pink-100">
+    <div class="lg:w-[760px] w-[100vw] h-[100vh] lg:h-[100vh] lg:bg-white lg:pt-[30px] lg:px-[80px]">
+        <span class="hidden lg:block lg:font-[500]">Not a member yet? <a class="lg:text-orange-500 lg:font-[700]" href="#">Create an account</a></span><br><br><br><br class="hidden lg:block">
+        <div class="">
+            <h1 class="text-6xl ml-5 lg:ml-[-5px] lg:text-6xl font-[700] lg:text-orange-500">Sign In</h1>
+        </div><br><br><br class="block lg:hidden"><br class="block lg:hidden">
+
+        <form action="" id="SigninForm">
+           <div class="">
+              <div class="">
+
+                  <!-- ---------input form for mobile view and web view ------- -->
+
+
+                 <label class="block lg:hidden md:ml-5 ml-5 font-[600] text-xl">Email or Username</label>
+                 <input class="ml-5 md w-[90%] h-[50px] hover:border-black pl-4  lg:block lg:w-[500px] lg:h-[50px] md:hover:border-black lg:pl-4 border-[2px] border-[#F1790A] rounded-md lg:ml-[-5px]" type="text" name="" placeholder="Username" id="u"><br><br class="block lg:hidden">
+
+                 <label class="block lg:hidden ml-5 font-[600] text-xl">Password</label>
+                 <input class="ml-5 md w-[90%] h-[50px] hover:border-black pl-4  lg:block lg:w-[500px] lg:h-[50px] lg:pl-4 border-[2px] border-[#F1790A] lg:ml-[-5px] md:hover:border-black rounded-md w-[500px] " type="password" name="" placeholder="Password" id="p">
+              </div><br><br class="hidden lg:block">
+
+              <a class="text-[#F1790A] font-[700] float-right mr-10 lg:mr-[0px] md:mr-[74px]" href="#">Forgot password?</a>
+           </div>
+        </form><br><br><br>
+
+        <button class="item-center text-white lg:text-black ml-[30%] md:ml-[43%]  lg:ml-[-1px] bg-orange-500 lg:bg-transparent lg:hover:bg-orange-500 opacity-[100] transition-[ease-in] w-[150px] lg:w-[500px] h-[40px] lg:h-[50px] text-xl font-[700] border-[2px] border-[#F1790A] rounded-md " onclick="signinBtn()">Sign In</button><br><br>
+        <p class="block lg:hidden font-[500] ml-[20%] md:ml-[39%]">Don't have an account? <a class="text-blue-800" href="#">Sign Up</a></p>
+        <br><br class="hidden lg:block"><br class="hidden lg:block"><br class="hidden lg:block">
+
+        <p class="hidden lg:block text-orange-500 font-[700] ml-[-70px]">&copy; Codeweb 2024</p>
+    </div>
+
+    <div class="hidden lg:block lg:bg-orange-500 lg:w-[770px] lg:h-[770px] ">
+        <div class="hidden lg:block lg:mt-[100px]">
+            <div class="hidden lg:block" style="width: 200px; height: 100px; background-color: #D6753E; border-bottom-left-radius: 150px; border-bottom-right-radius: 150px; margin-top: -120px;"></div><br><br><br><br>
+            <hr class="hidden lg:block lg:w-[500px] lg:mx-[160px]">
+            <h1 class="hidden lg:block lg:text-5xl lg:font-[700] lg:text-white lg:text-center my-[40px]">Welcome Back to<br> <p class="ml-16 mt-4">Codeweb Bootcamp</p> </h1>
+            <p class="text-white ml-[250px] mb-6 font-[500] font-[italic] ">Please put in your credentials to start using</p>
+            <hr class="w-[500px] mx-[160px]">
+        </div>
+
+        <div class=" flex">
+            <div class="" style="width: 370px; height: 175px; background-color: #D6753E; border-top-left-radius: 1000px; margin-top: 180px; "></div>
+
+            <div class="" style="width: 400px; height: 175px; background-color: #D6753E; border-top-right-radius: 1000px; margin-top: 180px; "></div>
+        </div>
+        
+    </div>
+          
+   </div>
+
+
+   <!-- script -->
+
+   <script>
+
+    function signinBtn(){
+
+        var username = document.getElementById("u").value;
+        var password = document.getElementById("p").value;
+        var specialCharRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+        var upperCase = /[A-Z]/;
+        var lowerCase = /[a-z]/;
+
+        if(username =="" || password =="") {
+            alert("Field can not be empty");
+            return;
+        }
+
+        if (password.length < 8 || !specialCharRegex.test(password) || !upperCase.test(password) || !lowerCase.test(password)){
+            alert("Password must contain at least 1 special character\n1 Uppercase and Lowercase\nat least 8 characters long");
+            return false;
+        }
+
+        else{
+            alert("Login Successful");
+            document.getElementById("SigninForm").submit("signinBtn");
+            return;
+        }
+
+    }
+
+   </script>
+    
+</body>
+</html>
